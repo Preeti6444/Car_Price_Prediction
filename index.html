@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Used Car Price Predictor</title>
+</head>
+<body>
+    <h2>Used Car Price Prediction</h2>
+    <form action="/predict" method="post">
+        Year: <input type="text" name="year"><br>
+        KM Driven: <input type="text" name="km_driven"><br>
+        Fuel Type:
+        <select name="fuel_type">
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Other">Other</option>
+        </select><br>
+        <input type="submit" value="Predict">
+    </form>
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
