@@ -15,7 +15,7 @@ def home():
 def predict():
     # Get input from form
     year = int(request.form['year'])
-    km_driven = int(request.form['km_driven'])
+    kms_driven = int(request.form['kms_driven'])
     fuel_type = request.form['fuel_type']  # 'Petrol', 'Diesel', etc.
 
     # Convert fuel type to numeric (simple encoding)
@@ -27,10 +27,10 @@ def predict():
         fuel = 2
 
     # Predict
-    input_features = np.array([[year, km_driven, fuel]])
+    input_features = np.array([[year, kms_driven, fuel]])
     prediction = model.predict(input_features)[0]
 
     return render_template('index.html', prediction_text=f"Estimated Price: ₹{round(prediction, 2)}")
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
