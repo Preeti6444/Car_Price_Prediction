@@ -1,0 +1,161 @@
+/* Basic Reset & Body Styling */
+body {
+    font-family: 'Open Sans', sans-serif; /* A clean, readable font */
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5; /* Soft light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    color: #333; /* Darker text for good contrast */
+}
+
+/* Container for the entire form */
+.container {
+    background-color: #ffffff; /* White background for the form card */
+    padding: 30px 40px; /* More padding inside the card */
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Deeper, softer shadow */
+    width: 100%;
+    max-width: 550px; /* Max width for readability */
+    margin: 30px auto; /* Centering and some top/bottom margin */
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif; /* A bolder, more modern font for the title */
+    color: #2c3e50; /* A strong, dark blue/gray */
+    text-align: center;
+    margin-bottom: 35px; /* More space below the title */
+    font-weight: 700; /* Bold */
+    font-size: 2.2em; /* Larger title */
+}
+
+/* Form Group Styling (Label + Input) */
+.form-group {
+    margin-bottom: 20px; /* Consistent spacing between form fields */
+}
+
+label {
+    display: block; /* Make labels take their own line */
+    margin-bottom: 8px; /* Space between label and input */
+    font-weight: 600; /* Slightly bolder labels */
+    color: #555; /* Slightly lighter than main text */
+    font-size: 0.95em;
+}
+
+input[type="number"],
+select {
+    width: 100%; /* Full width within its container */
+    padding: 12px 15px; /* More padding for bigger touch targets and better aesthetics */
+    border: 1px solid #dcdfe6; /* Light gray border */
+    border-radius: 8px; /* Rounded corners for inputs */
+    font-size: 1em; /* Standard font size */
+    color: #333;
+    box-sizing: border-box; /* Include padding in width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+    -webkit-appearance: none; /* Remove default browser styling for select */
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff; /* Ensure white background for inputs */
+}
+
+input[type="number"]::placeholder {
+    color: #aeb0b3; /* Lighter placeholder text */
+}
+
+/* Focus State for Inputs and Selects */
+input[type="number"]:focus,
+select:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2); /* Soft green glow */
+    outline: none; /* Remove default outline */
+}
+
+/* Specific styling for select dropdown arrow */
+select {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px top 50%;
+    background-size: 18px;
+    padding-right: 40px; /* Make space for the custom arrow */
+}
+
+
+/* Predict Button Styling */
+.predict-button {
+    display: block; /* Make it a block level element */
+    width: 100%; /* Full width */
+    padding: 15px 25px; /* Generous padding */
+    background-color: #4CAF50; /* A vibrant green */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1.1em; /* Slightly larger text */
+    font-weight: 600; /* Semi-bold */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+    margin-top: 30px; /* Space above the button */
+    letter-spacing: 0.5px; /* Slight letter spacing */
+}
+
+.predict-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.predict-button:active {
+    background-color: #3e8e41; /* Even darker on active */
+    transform: translateY(0); /* Press down effect */
+}
+
+/* Estimated Price Display */
+.price-display {
+    text-align: center;
+    margin-top: 35px; /* More space above price */
+    padding: 20px;
+    background-color: #e8f5e9; /* Very light green background */
+    border-left: 5px solid #4CAF50; /* Green left border as an accent */
+    border-radius: 8px;
+}
+
+.price-display p {
+    margin: 0; /* Remove default paragraph margin */
+    font-size: 1.2em; /* Larger font size */
+    color: #2c3e50; /* Dark text */
+    font-weight: 600;
+}
+
+.estimated-value {
+    color: #28a745; /* A strong, clear green for the price */
+    font-size: 1.5em; /* Even larger for the value itself */
+    font-weight: 700; /* Extra bold */
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px 25px; /* Adjust padding for smaller screens */
+        margin: 15px; /* Reduce margin */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Smaller title on mobile */
+    }
+
+    input[type="number"],
+    select,
+    .predict-button {
+        padding: 12px; /* Slightly less padding on smaller screens */
+    }
+
+    .price-display {
+        padding: 15px;
+    }
+
+    .estimated-value {
+        font-size: 1.3em;
+    }
+}
